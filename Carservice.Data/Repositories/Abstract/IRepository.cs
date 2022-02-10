@@ -13,6 +13,7 @@ namespace Carservice.Data.Repositories.Abstract
         Task<T> AddAsyn(T t);
         int Count();
         Task<int> CountAsync();
+        void Delete(int id);
         void Delete(T entity);
         Task<int> DeleteAsyn(T entity);
         void Dispose();

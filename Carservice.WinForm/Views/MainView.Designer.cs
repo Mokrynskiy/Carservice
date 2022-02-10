@@ -81,7 +81,7 @@
             this.barButtonItem8,
             this.Единицы});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 11;
+            this.ribbonControl1.MaxItemId = 14;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -93,16 +93,16 @@
             // 
             this.barButtonOrderPrint.Caption = "Печать";
             this.barButtonOrderPrint.Id = 1;
-            this.barButtonOrderPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonOrderPrint.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonOrderPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonOrderPrint.ImageOptions.Image")));
+            this.barButtonOrderPrint.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonOrderPrint.ImageOptions.LargeImage")));
             this.barButtonOrderPrint.Name = "barButtonOrderPrint";
             // 
             // barButtonOrderDetail
             // 
             this.barButtonOrderDetail.Caption = "Детали заказа";
             this.barButtonOrderDetail.Id = 2;
-            this.barButtonOrderDetail.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barButtonOrderDetail.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonOrderDetail.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonOrderDetail.ImageOptions.Image")));
+            this.barButtonOrderDetail.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonOrderDetail.ImageOptions.LargeImage")));
             this.barButtonOrderDetail.Name = "barButtonOrderDetail";
             // 
             // barButtonOrderAdd
@@ -110,8 +110,8 @@
             this.barButtonOrderAdd.Caption = "Создать";
             this.barButtonOrderAdd.Hint = "Создать новый заказ";
             this.barButtonOrderAdd.Id = 3;
-            this.barButtonOrderAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.barButtonOrderAdd.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.barButtonOrderAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonOrderAdd.ImageOptions.Image")));
+            this.barButtonOrderAdd.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonOrderAdd.ImageOptions.LargeImage")));
             this.barButtonOrderAdd.Name = "barButtonOrderAdd";
             // 
             // barButtonOrderEdit
@@ -119,8 +119,8 @@
             this.barButtonOrderEdit.Caption = "Редактировать";
             this.barButtonOrderEdit.Hint = "Редактировать заказ";
             this.barButtonOrderEdit.Id = 4;
-            this.barButtonOrderEdit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.barButtonOrderEdit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.barButtonOrderEdit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonOrderEdit.ImageOptions.Image")));
+            this.barButtonOrderEdit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonOrderEdit.ImageOptions.LargeImage")));
             this.barButtonOrderEdit.Name = "barButtonOrderEdit";
             // 
             // barButtonOrderDelete
@@ -128,8 +128,8 @@
             this.barButtonOrderDelete.Caption = "Удалить";
             this.barButtonOrderDelete.Hint = "Удалить заказ";
             this.barButtonOrderDelete.Id = 5;
-            this.barButtonOrderDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
-            this.barButtonOrderDelete.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
+            this.barButtonOrderDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonOrderDelete.ImageOptions.Image")));
+            this.barButtonOrderDelete.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonOrderDelete.ImageOptions.LargeImage")));
             this.barButtonOrderDelete.Name = "barButtonOrderDelete";
             // 
             // Справочник

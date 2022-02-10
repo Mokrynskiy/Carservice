@@ -23,6 +23,7 @@ namespace Carservice.Data.Repositories
         {
             return dbSet;
         }
+        
         public virtual async Task<ICollection<T>> GetAllAsyn()
         {
             return await dbSet.ToListAsync();
@@ -148,6 +149,12 @@ namespace Carservice.Data.Repositories
         {
             Dispose(true);
             GC.SuppressFinalize(this);
+        }
+
+        public void Delete(int id)
+        {
+            var entity = Get(id);
+            Delete(entity);
         }
     }
 }

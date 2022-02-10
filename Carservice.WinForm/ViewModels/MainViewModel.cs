@@ -3,6 +3,7 @@ using CarService.WinForm.Models;
 using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
 using DevExpress.Mvvm.POCO;
+using DevExpress.XtraEditors;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Forms;
@@ -45,12 +46,34 @@ namespace Carservice.WinForm.ViewModels
                 order.Sum = sum;
                 Orders.Add(order);
             }
+            SelectedOrder = Orders.FirstOrDefault();
         }
+        // Редактирование заказа
         public void Edit()
         {
             MessageBox.Show(SelectedOrder.Client);
         }
+        // Удаление заказа
+        public void DeleteOrder()
+        {
+            if (SelectedOrder != null)
+            {
+                if (XtraMessageBox.Show($"Вы действительно хотите удалить данные о заказе: №{SelectedOrder.Id} {SelectedOrder.Client} {SelectedOrder.Car}", "Внимание!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        uow.OrderRepos.Delete(SelectedOrder.Id);
+                        uow.Save();
+                        Orders.Remove(SelectedOrder);
+                    }
+                    catch (System.Exception e)
+                    {
 
+                        XtraMessageBox.Show(e.Message);
+                    }
+                }
+            }
+        }
 
 
         //public void ShowCarCatalogView()
