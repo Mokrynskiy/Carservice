@@ -30,10 +30,9 @@ namespace Carservice.WinForm.Views
             var fluent = mvvmContext.OfType<MainViewModel>();
             mvvmContext.RegisterService(WindowedDocumentManagerService.Create());
             fluent.BindCommand(barButtonIShowCarCatalog, vm => vm.ShowCarCatalogView);
+            fluent.BindCommand(barButtonShowEmployeesView, vm => vm.ShowEmployeesView);
 
             fluent.SetBinding(gridOrders, gControl => gControl.DataSource, vm => vm.Orders);
-
-
             fluent.WithEvent<ColumnView, FocusedRowObjectChangedEventArgs>(gridViewOrders, "FocusedRowObjectChanged")
                 .SetBinding(x => x.SelectedOrder,
                     args => args.Row as OrderRowModel,

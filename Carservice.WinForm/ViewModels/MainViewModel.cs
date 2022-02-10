@@ -74,18 +74,7 @@ namespace Carservice.WinForm.ViewModels
                 }
             }
         }
-
-
-        //public void ShowCarCatalogView()
-        //{
-        //    CarCatalogView view = new CarCatalogView();
-        //    view.ShowDialog();
-        //}
-        //public void ShowOrderDetail(string id)
-        //{
-        //    OrderDetailView view = new OrderDetailView();
-        //    view.ShowDialog();
-        //}
+                    
 
 
     }

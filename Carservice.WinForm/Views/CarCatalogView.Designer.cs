@@ -32,22 +32,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CarCatalogView));
             this.stackPanel1 = new DevExpress.Utils.Layout.StackPanel();
             this.buttonCancel = new DevExpress.XtraEditors.SimpleButton();
-            this.buttonOk = new DevExpress.XtraEditors.SimpleButton();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.listBoxBrands = new DevExpress.XtraEditors.ImageListBoxControl();
             this.stackPanel2 = new DevExpress.Utils.Layout.StackPanel();
             this.buttonAddBrand = new DevExpress.XtraEditors.SimpleButton();
             this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
             this.buttonEditBrand = new DevExpress.XtraEditors.SimpleButton();
             this.buttonDeleteBrand = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.listBoxModels = new DevExpress.XtraEditors.ImageListBoxControl();
             this.stackPanel3 = new DevExpress.Utils.Layout.StackPanel();
             this.buttonAddModel = new DevExpress.XtraEditors.SimpleButton();
             this.buttonEditModel = new DevExpress.XtraEditors.SimpleButton();
             this.buttonDeleteModel = new DevExpress.XtraEditors.SimpleButton();
             this.mvvmContext1 = new DevExpress.Utils.MVVM.MVVMContext(this.components);
-            this.listBoxBrands = new DevExpress.XtraEditors.ImageListBoxControl();
-            this.listBoxModels = new DevExpress.XtraEditors.ImageListBoxControl();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).BeginInit();
             this.stackPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -58,22 +57,21 @@
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxBrands)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel2)).BeginInit();
             this.stackPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxModels)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel3)).BeginInit();
             this.stackPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxBrands)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxModels)).BeginInit();
             this.SuspendLayout();
             // 
             // stackPanel1
             // 
             this.stackPanel1.AutoSize = true;
             this.stackPanel1.Controls.Add(this.buttonCancel);
-            this.stackPanel1.Controls.Add(this.buttonOk);
             this.stackPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.stackPanel1.LayoutDirection = DevExpress.Utils.Layout.StackPanelLayoutDirection.RightToLeft;
             this.stackPanel1.Location = new System.Drawing.Point(0, 422);
@@ -89,17 +87,7 @@
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(110, 35);
             this.buttonCancel.TabIndex = 1;
-            this.buttonCancel.Text = "Отмена";
-            // 
-            // buttonOk
-            // 
-            this.buttonOk.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonOk.ImageOptions.Image")));
-            this.buttonOk.Location = new System.Drawing.Point(467, 10);
-            this.buttonOk.Margin = new System.Windows.Forms.Padding(3, 10, 30, 10);
-            this.buttonOk.Name = "buttonOk";
-            this.buttonOk.Size = new System.Drawing.Size(110, 35);
-            this.buttonOk.TabIndex = 0;
-            this.buttonOk.Text = "Применить";
+            this.buttonCancel.Text = "Выход";
             // 
             // splitContainerControl1
             // 
@@ -132,6 +120,14 @@
             this.groupControl1.Size = new System.Drawing.Size(349, 422);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Марка автомобиля";
+            // 
+            // listBoxBrands
+            // 
+            this.listBoxBrands.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxBrands.Location = new System.Drawing.Point(2, 74);
+            this.listBoxBrands.Name = "listBoxBrands";
+            this.listBoxBrands.Size = new System.Drawing.Size(345, 346);
+            this.listBoxBrands.TabIndex = 2;
             // 
             // stackPanel2
             // 
@@ -195,6 +191,14 @@
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Модель автомобиля";
             // 
+            // listBoxModels
+            // 
+            this.listBoxModels.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxModels.Location = new System.Drawing.Point(2, 74);
+            this.listBoxModels.Name = "listBoxModels";
+            this.listBoxModels.Size = new System.Drawing.Size(375, 346);
+            this.listBoxModels.TabIndex = 3;
+            // 
             // stackPanel3
             // 
             this.stackPanel3.AutoSize = true;
@@ -251,22 +255,6 @@
             this.mvvmContext1.ContainerControl = this;
             this.mvvmContext1.ViewModelType = typeof(Carservice.WinForm.ViewModels.CarCatalogViewModel);
             // 
-            // listBoxBrands
-            // 
-            this.listBoxBrands.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBoxBrands.Location = new System.Drawing.Point(2, 74);
-            this.listBoxBrands.Name = "listBoxBrands";
-            this.listBoxBrands.Size = new System.Drawing.Size(345, 346);
-            this.listBoxBrands.TabIndex = 2;
-            // 
-            // listBoxModels
-            // 
-            this.listBoxModels.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBoxModels.Location = new System.Drawing.Point(2, 74);
-            this.listBoxModels.Name = "listBoxModels";
-            this.listBoxModels.Size = new System.Drawing.Size(375, 346);
-            this.listBoxModels.TabIndex = 3;
-            // 
             // CarCatalogView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -286,18 +274,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxBrands)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel2)).EndInit();
             this.stackPanel2.ResumeLayout(false);
             this.stackPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxModels)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel3)).EndInit();
             this.stackPanel3.ResumeLayout(false);
             this.stackPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxBrands)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxModels)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,7 +293,6 @@
 
         #endregion
         private DevExpress.Utils.Layout.StackPanel stackPanel1;
-        private DevExpress.XtraEditors.SimpleButton buttonOk;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.Utils.Layout.StackPanel stackPanel2;

@@ -78,6 +78,9 @@
     <Compile Include="Models\CarBrandModel.cs" />
     <Compile Include="Models\CarModelModel.cs" />
     <Compile Include="Models\OrderRowModel.cs" />
+    <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\PositionModel.cs" />
+    <Compile Include="ViewModels\EmployeesViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,6 +92,19 @@
       <DependentUpon>CarCatalogView.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\CarCatalogViewModel.cs" />
+    <Compile Include="Views\Dialogs\EditEmployeeDialog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Dialogs\EditEmployeeDialog.Designer.cs">
+      <DependentUpon>EditEmployeeDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\DialogViewModels\EditEmployeeDialogViewModel.cs" />
+    <Compile Include="Views\EmployeesView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeesView.Designer.cs">
+      <DependentUpon>EmployeesView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +131,12 @@
     <EmbeddedResource Include="Views\CarCatalogView.resx">
       <DependentUpon>CarCatalogView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dialogs\EditEmployeeDialog.resx">
+      <DependentUpon>EditEmployeeDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeesView.resx">
+      <DependentUpon>EmployeesView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +162,7 @@
       <Name>Carservice.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

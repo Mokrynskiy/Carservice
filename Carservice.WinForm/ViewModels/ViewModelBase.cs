@@ -11,6 +11,7 @@ namespace Carservice.WinForm.ViewModels
 
         protected IDocumentManagerService DocumentManagerService => this.GetService<IDocumentManagerService>();
         readonly static object CarCatalogView_ID = new object();
+        readonly static object EmployeesView_ID = new object();
         public void CreateDocument(object id, string documentType, string title)
         {
             var document = DocumentManagerService.FindDocumentById(id);
@@ -26,6 +27,10 @@ namespace Carservice.WinForm.ViewModels
         public void ShowCarCatalogView()
         {
             CreateDocument(CarCatalogView_ID, "CarCatalogView", "Каталог автомобилей");
+        }
+        public void ShowEmployeesView()
+        {
+            CreateDocument(EmployeesView_ID, "EmployeesView", "Сотрудники");
         }
         public void CloseView()
         {

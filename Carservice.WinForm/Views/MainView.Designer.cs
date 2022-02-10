@@ -38,7 +38,7 @@
             this.barButtonOrderDelete = new DevExpress.XtraBars.BarButtonItem();
             this.Справочник = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonShowEmployeesView = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonIShowCarCatalog = new DevExpress.XtraBars.BarButtonItem();
             this.Единицы = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -77,7 +77,7 @@
             this.barButtonOrderDelete,
             this.Справочник,
             this.barButtonItem6,
-            this.barButtonItem7,
+            this.barButtonShowEmployeesView,
             this.barButtonIShowCarCatalog,
             this.Единицы});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
@@ -148,20 +148,20 @@
             this.barButtonItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
             this.barButtonItem6.Name = "barButtonItem6";
             // 
-            // barButtonItem7
+            // barButtonShowEmployeesView
             // 
-            this.barButtonItem7.Caption = "Сотрудники";
-            this.barButtonItem7.Id = 8;
-            this.barButtonItem7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
-            this.barButtonItem7.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
-            this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonShowEmployeesView.Caption = "Сотрудники";
+            this.barButtonShowEmployeesView.Id = 8;
+            this.barButtonShowEmployeesView.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
+            this.barButtonShowEmployeesView.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
+            this.barButtonShowEmployeesView.Name = "barButtonShowEmployeesView";
             // 
             // barButtonIShowCarCatalog
             // 
             this.barButtonIShowCarCatalog.Caption = "Каталог автомобилей";
             this.barButtonIShowCarCatalog.Id = 9;
-            this.barButtonIShowCarCatalog.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
-            this.barButtonIShowCarCatalog.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
+            this.barButtonIShowCarCatalog.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonIShowCarCatalog.ImageOptions.Image")));
+            this.barButtonIShowCarCatalog.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonIShowCarCatalog.ImageOptions.LargeImage")));
             this.barButtonIShowCarCatalog.Name = "barButtonIShowCarCatalog";
             // 
             // Единицы
@@ -209,7 +209,7 @@
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.Справочник);
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem6);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem7);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonShowEmployeesView);
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonIShowCarCatalog);
             this.ribbonPageGroup4.ItemLinks.Add(this.Единицы);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
@@ -378,7 +378,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonOrderDelete;
         private DevExpress.XtraBars.BarButtonItem Справочник;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.BarButtonItem barButtonShowEmployeesView;
         private DevExpress.XtraBars.BarButtonItem barButtonIShowCarCatalog;
         private DevExpress.XtraBars.BarButtonItem Единицы;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;

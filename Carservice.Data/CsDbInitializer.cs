@@ -71,7 +71,7 @@ namespace Carservice.Data
 
             db.Clients.Add(new Client { Surname = "Иванов", Name = "Иван", Patronymic = "Иванович", Cars = new List<Car> { new Car { CarModelId = 5, Color = "Красный", RegNumber = "C 568 TO 54", ProductionDate = DateTime.Now.AddYears(-10) } } });
             db.Clients.Add(new Client { Surname = "Коршунов", Name = "Федор", Patronymic = "Владимирович", Cars = new List<Car> { new Car { CarModelId = 8, Color = "Серый", RegNumber = "A 456 AK 54", ProductionDate = DateTime.Now.AddYears(-15) } } });
-            db.Clients.Add(new Client { Surname = "Петров", Name = "Сергей", Patronymic = "Михайлович", Cars = new List<Car> { new Car { CarModelId = 6, Color = "Бежевфй", RegNumber = "P 225 OE 54", ProductionDate = DateTime.Now.AddYears(-5) } } });
+            db.Clients.Add(new Client { Surname = "Петров", Name = "Сергей", Patronymic = "Михайлович", Cars = new List<Car> { new Car { CarModelId = 6, Color = "Бежевй", RegNumber = "P 225 OE 54", ProductionDate = DateTime.Now.AddYears(-5) } } });
             db.Clients.Add(new Client { Surname = "Добрынин", Name = "Александр", Patronymic = "Владимирович", Cars = new List<Car> { new Car { CarModelId = 10, Color = "Синий", RegNumber = "M 568 MH 54", ProductionDate = DateTime.Now.AddYears(-12) } } });
 
             db.SaveChanges();
