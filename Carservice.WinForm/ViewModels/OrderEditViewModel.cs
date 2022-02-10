@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Carservice.WinForm.Views
+namespace Carservice.WinForm.ViewModels
 {
     [POCOViewModel()]
     public class OrderEditViewModel

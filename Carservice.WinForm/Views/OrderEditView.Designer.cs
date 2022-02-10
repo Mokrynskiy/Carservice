@@ -74,7 +74,7 @@
             // mvvmContextOrderEdit
             // 
             this.mvvmContextOrderEdit.ContainerControl = this;
-            this.mvvmContextOrderEdit.ViewModelType = typeof(Carservice.WinForm.Views.OrderEditViewModel);
+            this.mvvmContextOrderEdit.ViewModelType = typeof(Carservice.WinForm.ViewModels.OrderEditViewModel);
             // 
             // OrderEditView
             // 

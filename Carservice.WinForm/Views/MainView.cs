@@ -29,6 +29,8 @@ namespace Carservice.WinForm.Views
         {
             var fluent = mvvmContext.OfType<MainViewModel>();
             mvvmContext.RegisterService(WindowedDocumentManagerService.Create());
+            fluent.BindCommand(barButtonIShowCarCatalog, vm => vm.ShowCarCatalogView);
+
             fluent.SetBinding(gridOrders, gControl => gControl.DataSource, vm => vm.Orders);
 
 

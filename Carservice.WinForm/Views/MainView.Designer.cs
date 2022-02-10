@@ -39,7 +39,7 @@
             this.Справочник = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonIShowCarCatalog = new DevExpress.XtraBars.BarButtonItem();
             this.Единицы = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -78,7 +78,7 @@
             this.Справочник,
             this.barButtonItem6,
             this.barButtonItem7,
-            this.barButtonItem8,
+            this.barButtonIShowCarCatalog,
             this.Единицы});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 14;
@@ -156,13 +156,13 @@
             this.barButtonItem7.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
             this.barButtonItem7.Name = "barButtonItem7";
             // 
-            // barButtonItem8
+            // barButtonIShowCarCatalog
             // 
-            this.barButtonItem8.Caption = "Каталог автомобилей";
-            this.barButtonItem8.Id = 9;
-            this.barButtonItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
-            this.barButtonItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
-            this.barButtonItem8.Name = "barButtonItem8";
+            this.barButtonIShowCarCatalog.Caption = "Каталог автомобилей";
+            this.barButtonIShowCarCatalog.Id = 9;
+            this.barButtonIShowCarCatalog.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
+            this.barButtonIShowCarCatalog.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
+            this.barButtonIShowCarCatalog.Name = "barButtonIShowCarCatalog";
             // 
             // Единицы
             // 
@@ -210,7 +210,7 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.Справочник);
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem6);
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem7);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem8);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonIShowCarCatalog);
             this.ribbonPageGroup4.ItemLinks.Add(this.Единицы);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "ribbonPageGroup4";
@@ -379,7 +379,7 @@
         private DevExpress.XtraBars.BarButtonItem Справочник;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem barButtonIShowCarCatalog;
         private DevExpress.XtraBars.BarButtonItem Единицы;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
