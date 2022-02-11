@@ -138,6 +138,7 @@
             this.gridViewEmployee.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gridViewEmployee.GridControl = this.gridEmployee;
             this.gridViewEmployee.Name = "gridViewEmployee";
+            this.gridViewEmployee.OptionsView.ShowIndicator = false;
             // 
             // Surname
             // 

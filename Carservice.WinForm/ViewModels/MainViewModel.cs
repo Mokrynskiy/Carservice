@@ -1,4 +1,5 @@
 ﻿using Carservice.Data;
+using Carservice.Data.Repositories.Abstract;
 using CarService.WinForm.Models;
 using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
@@ -14,7 +15,7 @@ namespace Carservice.WinForm.ViewModels
     public class MainViewModel : ViewModelBase
     {
 
-        private readonly UnitOfWork uow;
+        private readonly IUnitOfWork uow;
         public virtual ObservableCollection<OrderRowModel> Orders { get; set; }
         public virtual OrderRowModel SelectedOrder { get; set; }
 

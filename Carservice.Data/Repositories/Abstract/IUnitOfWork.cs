@@ -3,7 +3,7 @@ using System;
 
 namespace Carservice.Data.Repositories.Abstract
 {
-    internal interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork : IDisposable
     {
         IRepository<Order> OrderRepos { get; }
         IRepository<Car> CarRepos { get; }

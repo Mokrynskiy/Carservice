@@ -76,7 +76,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\CarBrandModel.cs" />
+    <Compile Include="Models\CarModel.cs" />
     <Compile Include="Models\CarModelModel.cs" />
+    <Compile Include="Models\ClientModel.cs" />
+    <Compile Include="ViewModels\ClientsViewModel.cs" />
     <Compile Include="Models\OrderRowModel.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Models\PositionModel.cs" />
@@ -92,6 +95,12 @@
       <DependentUpon>CarCatalogView.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\CarCatalogViewModel.cs" />
+    <Compile Include="Views\ClientsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ClientsView.Designer.cs">
+      <DependentUpon>ClientsView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Dialogs\EditEmployeeDialog.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -130,6 +139,9 @@
     </Compile>
     <EmbeddedResource Include="Views\CarCatalogView.resx">
       <DependentUpon>CarCatalogView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ClientsView.resx">
+      <DependentUpon>ClientsView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Dialogs\EditEmployeeDialog.resx">
       <DependentUpon>EditEmployeeDialog.cs</DependentUpon>

@@ -1,7 +1,6 @@
 ﻿using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
 using DevExpress.Mvvm.POCO;
-using System;
 
 namespace Carservice.WinForm.ViewModels
 {
@@ -12,6 +11,8 @@ namespace Carservice.WinForm.ViewModels
         protected IDocumentManagerService DocumentManagerService => this.GetService<IDocumentManagerService>();
         readonly static object CarCatalogView_ID = new object();
         readonly static object EmployeesView_ID = new object();
+        readonly static object EditEmployeeDialog_ID = new object();
+        readonly static object ClientsView_ID = new object();
         public void CreateDocument(object id, string documentType, string title)
         {
             var document = DocumentManagerService.FindDocumentById(id);
@@ -31,6 +32,14 @@ namespace Carservice.WinForm.ViewModels
         public void ShowEmployeesView()
         {
             CreateDocument(EmployeesView_ID, "EmployeesView", "Сотрудники");
+        }
+        public void ShowEditEmployeeDialog()
+        {
+            CreateDocument(EditEmployeeDialog_ID, "EditEmployeeDialog", "Редактирование сотрудника");
+        }
+        public void ShowClientsView()
+        {
+            CreateDocument(ClientsView_ID, "ClientsView", "Клиенты");
         }
         public void CloseView()
         {

@@ -1,5 +1,6 @@
 ﻿using Carservice.Data;
 using Carservice.Data.Entities;
+using Carservice.Data.Repositories.Abstract;
 using Carservice.WinForm.Models;
 using DevExpress.Mvvm.DataAnnotations;
 using DevExpress.XtraEditors;
@@ -13,7 +14,7 @@ namespace Carservice.WinForm.ViewModels
     [POCOViewModel()]
     public class CarCatalogViewModel: ViewModelBase
     {
-        private readonly UnitOfWork uow;
+        private readonly IUnitOfWork uow;
         public virtual ObservableCollection<CarBrandModel> CarBrands { get; set; }
         public virtual ObservableCollection<CarModelModel> CarModels { get; set; }
         public virtual CarBrandModel SelectedBrand { get; set; }
@@ -128,7 +129,7 @@ namespace Carservice.WinForm.ViewModels
             {
                 try
                 {
-                    uow.CarModelRepos.Add(new CarModel { ModelName = result, BrandId = SelectedBrand.Id });
+                    uow.CarModelRepos.Add(new Data.Entities.CarModel { ModelName = result, BrandId = SelectedBrand.Id });
                     uow.Save();
                     UpdateData();
                     SelectedModel = CarModels.LastOrDefault();

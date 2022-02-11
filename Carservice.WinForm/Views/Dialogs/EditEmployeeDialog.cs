@@ -26,6 +26,7 @@ namespace Carservice.WinForm.Views.Dialogs
             fluent.SetBinding(tbSurname, tb => tb.Text, vm => vm.Employee.Surname);
             fluent.SetBinding(tbName, tb => tb.Text, vm => vm.Employee.Name);
             fluent.SetBinding(tbPatronymic, tb => tb.Text, vm => vm.Employee.Patronymic);
+            fluent.SetBinding(cbPositions, cb => cb.Properties.DataSource, vm => vm.Positions);
 
         }
     }

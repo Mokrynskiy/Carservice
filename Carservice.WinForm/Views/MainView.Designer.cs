@@ -36,7 +36,7 @@
             this.barButtonOrderAdd = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonOrderEdit = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonOrderDelete = new DevExpress.XtraBars.BarButtonItem();
-            this.Справочник = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonShowClients = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonShowEmployeesView = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonIShowCarCatalog = new DevExpress.XtraBars.BarButtonItem();
@@ -53,10 +53,10 @@
             this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.OpenDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DueDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CloceDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Sum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Client = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Car = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Sum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CloceDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.mvvmContext = new DevExpress.Utils.MVVM.MVVMContext(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridOrders)).BeginInit();
@@ -75,7 +75,7 @@
             this.barButtonOrderAdd,
             this.barButtonOrderEdit,
             this.barButtonOrderDelete,
-            this.Справочник,
+            this.barButtonShowClients,
             this.barButtonItem6,
             this.barButtonShowEmployeesView,
             this.barButtonIShowCarCatalog,
@@ -132,13 +132,13 @@
             this.barButtonOrderDelete.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonOrderDelete.ImageOptions.LargeImage")));
             this.barButtonOrderDelete.Name = "barButtonOrderDelete";
             // 
-            // Справочник
+            // barButtonShowClients
             // 
-            this.Справочник.Caption = "Клиенты";
-            this.Справочник.Id = 6;
-            this.Справочник.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Справочник.ImageOptions.Image")));
-            this.Справочник.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Справочник.ImageOptions.LargeImage")));
-            this.Справочник.Name = "Справочник";
+            this.barButtonShowClients.Caption = "Клиенты";
+            this.barButtonShowClients.Id = 6;
+            this.barButtonShowClients.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonShowClients.ImageOptions.Image")));
+            this.barButtonShowClients.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonShowClients.ImageOptions.LargeImage")));
+            this.barButtonShowClients.Name = "barButtonShowClients";
             // 
             // barButtonItem6
             // 
@@ -152,8 +152,8 @@
             // 
             this.barButtonShowEmployeesView.Caption = "Сотрудники";
             this.barButtonShowEmployeesView.Id = 8;
-            this.barButtonShowEmployeesView.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
-            this.barButtonShowEmployeesView.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
+            this.barButtonShowEmployeesView.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonShowEmployeesView.ImageOptions.Image")));
+            this.barButtonShowEmployeesView.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonShowEmployeesView.ImageOptions.LargeImage")));
             this.barButtonShowEmployeesView.Name = "barButtonShowEmployeesView";
             // 
             // barButtonIShowCarCatalog
@@ -207,7 +207,7 @@
             // 
             // ribbonPageGroup4
             // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.Справочник);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonShowClients);
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem6);
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonShowEmployeesView);
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonIShowCarCatalog);
@@ -240,18 +240,20 @@
             this.Id,
             this.OpenDate,
             this.DueDate,
-            this.CloceDate,
+            this.Sum,
             this.Client,
             this.Car,
-            this.Sum});
+            this.CloceDate});
             this.gridViewOrders.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gridViewOrders.GridControl = this.gridOrders;
             this.gridViewOrders.Name = "gridViewOrders";
+            this.gridViewOrders.OptionsView.ShowIndicator = false;
             // 
             // Id
             // 
             this.Id.Caption = "№ заказа";
             this.Id.FieldName = "Id";
+            this.Id.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.Id.MinWidth = 25;
             this.Id.Name = "Id";
             this.Id.OptionsColumn.AllowEdit = false;
@@ -287,18 +289,20 @@
             this.DueDate.VisibleIndex = 2;
             this.DueDate.Width = 94;
             // 
-            // CloceDate
+            // Sum
             // 
-            this.CloceDate.Caption = "Дата закрытия";
-            this.CloceDate.FieldName = "CloceDate";
-            this.CloceDate.MinWidth = 25;
-            this.CloceDate.Name = "CloceDate";
-            this.CloceDate.OptionsColumn.AllowEdit = false;
-            this.CloceDate.OptionsColumn.AllowFocus = false;
-            this.CloceDate.OptionsColumn.ReadOnly = true;
-            this.CloceDate.Visible = true;
-            this.CloceDate.VisibleIndex = 3;
-            this.CloceDate.Width = 94;
+            this.Sum.Caption = "Сумма заказа";
+            this.Sum.DisplayFormat.FormatString = "C2";
+            this.Sum.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.Sum.FieldName = "Sum";
+            this.Sum.MinWidth = 25;
+            this.Sum.Name = "Sum";
+            this.Sum.OptionsColumn.AllowEdit = false;
+            this.Sum.OptionsColumn.AllowFocus = false;
+            this.Sum.OptionsColumn.ReadOnly = true;
+            this.Sum.Visible = true;
+            this.Sum.VisibleIndex = 3;
+            this.Sum.Width = 94;
             // 
             // Client
             // 
@@ -326,20 +330,18 @@
             this.Car.VisibleIndex = 5;
             this.Car.Width = 94;
             // 
-            // Sum
+            // CloceDate
             // 
-            this.Sum.Caption = "Сумма заказа";
-            this.Sum.DisplayFormat.FormatString = "C2";
-            this.Sum.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.Sum.FieldName = "Sum";
-            this.Sum.MinWidth = 25;
-            this.Sum.Name = "Sum";
-            this.Sum.OptionsColumn.AllowEdit = false;
-            this.Sum.OptionsColumn.AllowFocus = false;
-            this.Sum.OptionsColumn.ReadOnly = true;
-            this.Sum.Visible = true;
-            this.Sum.VisibleIndex = 6;
-            this.Sum.Width = 94;
+            this.CloceDate.Caption = "Дата закрытия";
+            this.CloceDate.FieldName = "CloceDate";
+            this.CloceDate.MinWidth = 25;
+            this.CloceDate.Name = "CloceDate";
+            this.CloceDate.OptionsColumn.AllowEdit = false;
+            this.CloceDate.OptionsColumn.AllowFocus = false;
+            this.CloceDate.OptionsColumn.ReadOnly = true;
+            this.CloceDate.Visible = true;
+            this.CloceDate.VisibleIndex = 6;
+            this.CloceDate.Width = 94;
             // 
             // mvvmContext
             // 
@@ -376,7 +378,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonOrderAdd;
         private DevExpress.XtraBars.BarButtonItem barButtonOrderEdit;
         private DevExpress.XtraBars.BarButtonItem barButtonOrderDelete;
-        private DevExpress.XtraBars.BarButtonItem Справочник;
+        private DevExpress.XtraBars.BarButtonItem barButtonShowClients;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem barButtonShowEmployeesView;
         private DevExpress.XtraBars.BarButtonItem barButtonIShowCarCatalog;

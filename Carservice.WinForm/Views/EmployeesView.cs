@@ -37,8 +37,8 @@ namespace Carservice.WinForm.Views
                 .EventToCommand(x => x.EditEmployee, args => (args.Clicks == 2) && (args.Button == MouseButtons.Left));
             fluent.BindCommand(buttonClose, vm => vm.CloseView);
             fluent.BindCommand(buttonAdd, vm => vm.AddEmployee);
-            fluent.BindCommand(buttonEdit, vm => vm.EditEmployee);
-            fluent.BindCommand(buttonDelete, vm => vm.DeleteEmployee);
+            fluent.BindCommand(buttonEdit, vm => vm.ShowEditEmployeeDialog);
+            fluent.BindCommand(buttonDelete, vm => vm.DeleteEmployee);            
         }
        
     }

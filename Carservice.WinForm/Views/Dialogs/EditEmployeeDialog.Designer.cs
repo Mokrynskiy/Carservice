@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditEmployeeDialog));
             this.tbSurname = new DevExpress.XtraEditors.TextEdit();
             this.tbName = new DevExpress.XtraEditors.TextEdit();
             this.tbPatronymic = new DevExpress.XtraEditors.TextEdit();
@@ -36,13 +37,15 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.cbPosition = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.buttonCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonOk = new DevExpress.XtraEditors.SimpleButton();
             this.mvvmContext1 = new DevExpress.Utils.MVVM.MVVMContext(this.components);
+            this.cbPositions = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tbSurname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPatronymic.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbPosition.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbPositions.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tbSurname
@@ -98,25 +101,45 @@
             this.labelControl4.TabIndex = 7;
             this.labelControl4.Text = "Должность";
             // 
-            // cbPosition
+            // buttonCancel
             // 
-            this.cbPosition.Location = new System.Drawing.Point(162, 130);
-            this.cbPosition.Name = "cbPosition";
-            this.cbPosition.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbPosition.Size = new System.Drawing.Size(265, 22);
-            this.cbPosition.TabIndex = 8;
+            this.buttonCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.buttonCancel.Location = new System.Drawing.Point(369, 184);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(110, 36);
+            this.buttonCancel.TabIndex = 9;
+            this.buttonCancel.Text = "Отмена";
+            // 
+            // buttonOk
+            // 
+            this.buttonOk.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.buttonOk.Location = new System.Drawing.Point(235, 184);
+            this.buttonOk.Name = "buttonOk";
+            this.buttonOk.Size = new System.Drawing.Size(110, 36);
+            this.buttonOk.TabIndex = 10;
+            this.buttonOk.Text = "Сохранить";
             // 
             // mvvmContext1
             // 
             this.mvvmContext1.ContainerControl = this;
             this.mvvmContext1.ViewModelType = typeof(Carservice.WinForm.Views.Dialogs.EditEmployeeDialogViewModel);
             // 
+            // cbPositions
+            // 
+            this.cbPositions.Location = new System.Drawing.Point(162, 130);
+            this.cbPositions.Name = "cbPositions";
+            this.cbPositions.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbPositions.Size = new System.Drawing.Size(265, 22);
+            this.cbPositions.TabIndex = 12;
+            // 
             // EditEmployeeDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.cbPosition);
+            this.Controls.Add(this.cbPositions);
+            this.Controls.Add(this.buttonOk);
+            this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
@@ -125,12 +148,12 @@
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.tbSurname);
             this.Name = "EditEmployeeDialog";
-            this.Size = new System.Drawing.Size(499, 200);
+            this.Size = new System.Drawing.Size(499, 244);
             ((System.ComponentModel.ISupportInitialize)(this.tbSurname.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPatronymic.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbPosition.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbPositions.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,7 +168,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.ComboBoxEdit cbPosition;
         private DevExpress.Utils.MVVM.MVVMContext mvvmContext1;
+        private DevExpress.XtraEditors.SimpleButton buttonOk;
+        private DevExpress.XtraEditors.SimpleButton buttonCancel;
+        private DevExpress.XtraEditors.LookUpEdit cbPositions;
     }
 }

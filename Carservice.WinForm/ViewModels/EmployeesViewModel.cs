@@ -1,25 +1,21 @@
 ﻿using Carservice.Data;
+using Carservice.Data.Repositories.Abstract;
 using Carservice.WinForm.Models;
 using Carservice.WinForm.Views.Dialogs;
 using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
-using DevExpress.Utils.CommonDialogs.Internal;
 using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DialogResult = System.Windows.Forms.DialogResult;
 
 namespace Carservice.WinForm.ViewModels
 {
     [POCOViewModel()]
     public class EmployeesViewModel: ViewModelBase
     {
-        private readonly UnitOfWork uow;
+        private readonly IUnitOfWork uow;
         public virtual ObservableCollection<EmployeeModel> Employees { get; set; }
         public virtual EmployeeModel SelectedEmployee { get; set; }
         public EmployeesViewModel()
