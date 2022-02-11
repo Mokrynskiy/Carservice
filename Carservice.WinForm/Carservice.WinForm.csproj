@@ -79,6 +79,8 @@
     <Compile Include="Models\CarModel.cs" />
     <Compile Include="Models\CarModelModel.cs" />
     <Compile Include="Models\ClientModel.cs" />
+    <Compile Include="Models\MeasureModel.cs" />
+    <Compile Include="Models\ServiceModel.cs" />
     <Compile Include="ViewModels\ClientsViewModel.cs" />
     <Compile Include="Models\OrderRowModel.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
@@ -127,6 +129,13 @@
       <DependentUpon>OrderEditView.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\OrderEditViewModel.cs" />
+    <Compile Include="Views\ServicesView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ServicesView.Designer.cs">
+      <DependentUpon>ServicesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ServicesViewModel.cs" />
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -154,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\OrderEditView.resx">
       <DependentUpon>OrderEditView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ServicesView.resx">
+      <DependentUpon>ServicesView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />

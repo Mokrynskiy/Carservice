@@ -37,7 +37,7 @@
             this.barButtonOrderEdit = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonOrderDelete = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonShowClients = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonShowServices = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonShowEmployeesView = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonIShowCarCatalog = new DevExpress.XtraBars.BarButtonItem();
             this.Единицы = new DevExpress.XtraBars.BarButtonItem();
@@ -76,7 +76,7 @@
             this.barButtonOrderEdit,
             this.barButtonOrderDelete,
             this.barButtonShowClients,
-            this.barButtonItem6,
+            this.barButtonShowServices,
             this.barButtonShowEmployeesView,
             this.barButtonIShowCarCatalog,
             this.Единицы});
@@ -140,13 +140,13 @@
             this.barButtonShowClients.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonShowClients.ImageOptions.LargeImage")));
             this.barButtonShowClients.Name = "barButtonShowClients";
             // 
-            // barButtonItem6
+            // barButtonShowServices
             // 
-            this.barButtonItem6.Caption = "Услуги";
-            this.barButtonItem6.Id = 7;
-            this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
-            this.barButtonItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
-            this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonShowServices.Caption = "Услуги";
+            this.barButtonShowServices.Id = 7;
+            this.barButtonShowServices.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonServices.ImageOptions.Image")));
+            this.barButtonShowServices.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonServices.ImageOptions.LargeImage")));
+            this.barButtonShowServices.Name = "barButtonShowServices";
             // 
             // barButtonShowEmployeesView
             // 
@@ -208,7 +208,7 @@
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonShowClients);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem6);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonShowServices);
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonShowEmployeesView);
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonIShowCarCatalog);
             this.ribbonPageGroup4.ItemLinks.Add(this.Единицы);
@@ -379,7 +379,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonOrderEdit;
         private DevExpress.XtraBars.BarButtonItem barButtonOrderDelete;
         private DevExpress.XtraBars.BarButtonItem barButtonShowClients;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem barButtonShowServices;
         private DevExpress.XtraBars.BarButtonItem barButtonShowEmployeesView;
         private DevExpress.XtraBars.BarButtonItem barButtonIShowCarCatalog;
         private DevExpress.XtraBars.BarButtonItem Единицы;
