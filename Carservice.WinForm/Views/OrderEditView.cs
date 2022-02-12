@@ -1,5 +1,7 @@
-﻿using Carservice.WinForm.ViewModels;
+﻿using Carservice.WinForm.Models;
+using Carservice.WinForm.ViewModels;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Base;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,11 +26,30 @@ namespace Carservice.WinForm.Views
         void InitializeBindings()
         {
             var fluent = mvvmContextOrderEdit.OfType<OrderEditViewModel>();
+
+            fluent.SetBinding(tbOrderNumber, tb => tb.Text, vm => vm.Order.Id);
+            fluent.SetBinding(deOpenDate, tb => tb.Text, vm => vm.Order.OpenDate);
+            fluent.SetBinding(deDueDate, tb => tb.Text, vm => vm.Order.DueDate);
+            fluent.SetBinding(deCloseDate, tb => tb.Text, vm => vm.Order.CloseDate);
+            fluent.SetBinding(tbClientSurname, tb => tb.Text, vm => vm.Order.Car.Client.Surname);
+            fluent.SetBinding(tbClientName, tb => tb.Text, vm => vm.Order.Car.Client.Name);
+            fluent.SetBinding(tbClientPatronymic, tb => tb.Text, vm => vm.Order.Car.Client.Patronymic);
+            fluent.SetBinding(tbCarBrand, tb => tb.Text, vm => vm.Order.Car.Model.CarBrand.BrandName);
+            fluent.SetBinding(tbCarModel, tb => tb.Text, vm => vm.Order.Car.Model.ModelName);
+            fluent.SetBinding(tbCarRegNumber, tb => tb.Text, vm => vm.Order.Car.RegNumber);
+            fluent.SetBinding(tbCarProductionDate, tb => tb.Text, vm => vm.Order.Car.ProductionDate);
+            fluent.SetBinding(tbEmployeeSurname, tb => tb.Text, vm => vm.Order.Employee.Surname);
+            fluent.SetBinding(tbEmployeeName, tb => tb.Text, vm => vm.Order.Employee.Name);
+            fluent.SetBinding(tbEmployeePatronymic, tb => tb.Text, vm => vm.Order.Employee.Patronymic);
+            fluent.SetBinding(tbEmployeePosition, tb => tb.Text, vm => vm.Order.Employee.Position.PositionName);
+
+            fluent.SetBinding(gridServices, gControl => gControl.DataSource, vm => vm.Services);
+            fluent.WithEvent<ColumnView, FocusedRowObjectChangedEventArgs>(gridViewServices, "FocusedRowObjectChanged")
+                .SetBinding(x => x.SelectedService,
+                    args => args.Row as ServiceModel,
+                    (gView, entity) => gView.FocusedRowHandle = gView.FindRow(entity));
+
         }
 
-        private void textEdit2_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

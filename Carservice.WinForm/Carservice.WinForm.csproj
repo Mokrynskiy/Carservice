@@ -80,6 +80,8 @@
     <Compile Include="Models\CarModelModel.cs" />
     <Compile Include="Models\ClientModel.cs" />
     <Compile Include="Models\MeasureModel.cs" />
+    <Compile Include="Models\OrderModel.cs" />
+    <Compile Include="Models\OrderServicesModel.cs" />
     <Compile Include="Models\ServiceModel.cs" />
     <Compile Include="ViewModels\ClientsViewModel.cs" />
     <Compile Include="Models\OrderRowModel.cs" />

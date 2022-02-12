@@ -33,6 +33,7 @@ namespace Carservice.WinForm.Views
             fluent.BindCommand(barButtonShowEmployeesView, vm => vm.ShowEmployeesView);
             fluent.BindCommand(barButtonShowClients, vm => vm.ShowClientsView);
             fluent.BindCommand(barButtonShowServices, vm => vm.ShowServicesView);
+            fluent.BindCommand(barButtonOrderEdit, vm => vm.OrderEditView);
 
             fluent.SetBinding(gridOrders, gControl => gControl.DataSource, vm => vm.Orders);
             fluent.WithEvent<ColumnView, FocusedRowObjectChangedEventArgs>(gridViewOrders, "FocusedRowObjectChanged")

@@ -14,6 +14,7 @@ namespace Carservice.WinForm.ViewModels
         readonly static object EditEmployeeDialog_ID = new object();
         readonly static object ClientsView_ID = new object();
         readonly static object ServicesView_ID = new object();
+        readonly static object OrderEditView_ID = new object();
         public void CreateDocument(object id, string documentType, string title)
         {
             var document = DocumentManagerService.FindDocumentById(id);
@@ -45,6 +46,10 @@ namespace Carservice.WinForm.ViewModels
         public void ShowServicesView()
         {
             CreateDocument(ServicesView_ID, "ServicesView", "Услуги");
+        }
+        public void OrderEditView()
+        {
+            CreateDocument(ServicesView_ID, "OrderEditView", "Услуги");
         }
         public void CloseView()
         {
