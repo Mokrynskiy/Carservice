@@ -25,5 +25,10 @@ namespace Carservice.WinForm.Views
         {
             var fluent = mvvmContextOrderEdit.OfType<OrderEditViewModel>();
         }
+
+        private void textEdit2_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
