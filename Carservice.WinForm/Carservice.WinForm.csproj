@@ -49,6 +49,9 @@
     <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraNavBar.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v21.2.Core, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v21.2.Core.Desktop, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraVerticalGrid.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -105,13 +108,6 @@
     <Compile Include="Views\ClientsView.Designer.cs">
       <DependentUpon>ClientsView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Dialogs\EditEmployeeDialog.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Dialogs\EditEmployeeDialog.Designer.cs">
-      <DependentUpon>EditEmployeeDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewModels\DialogViewModels\EditEmployeeDialogViewModel.cs" />
     <Compile Include="Views\EmployeesView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -154,9 +150,6 @@
     <EmbeddedResource Include="Views\ClientsView.resx">
       <DependentUpon>ClientsView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Dialogs\EditEmployeeDialog.resx">
-      <DependentUpon>EditEmployeeDialog.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\EmployeesView.resx">
       <DependentUpon>EmployeesView.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,7 +164,6 @@
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\CarService.WinForm.Models.OrderRowModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -188,7 +180,9 @@
       <Name>Carservice.Data</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

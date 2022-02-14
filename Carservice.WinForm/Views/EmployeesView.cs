@@ -3,19 +3,11 @@ using Carservice.WinForm.ViewModels;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Carservice.WinForm.Views
 {
-    public partial class EmployeesView : DevExpress.XtraEditors.XtraUserControl
+    public partial class EmployeesView : XtraUserControl
     {
         public EmployeesView()
         {
@@ -36,9 +28,11 @@ namespace Carservice.WinForm.Views
             fluent.WithEvent<RowClickEventArgs>(gridViewEmployee, "RowClick")
                 .EventToCommand(x => x.EditEmployee, args => (args.Clicks == 2) && (args.Button == MouseButtons.Left));
             fluent.BindCommand(buttonClose, vm => vm.CloseView);
-            fluent.BindCommand(buttonAdd, vm => vm.AddEmployee);
-            fluent.BindCommand(buttonEdit, vm => vm.ShowEditEmployeeDialog);
-            fluent.BindCommand(buttonDelete, vm => vm.DeleteEmployee);            
+            fluent.BindCommand(buttonAdd, vm => vm.AddEmployee);            
+            fluent.BindCommand(buttonDelete, vm => vm.DeleteEmployee);
+            fluent.SetBinding(buttonClose, b => b.Text, vm => vm.CloseButtonCaption);
+            fluent.SetBinding(buttonOk, b => b.Visible, vm => vm.IsSelectMode);
+            fluent.WithCommand(vm => vm.SendSelectedEmployee).Bind(buttonOk);
         }
        
     }

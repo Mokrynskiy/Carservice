@@ -1,7 +1,6 @@
 ﻿using Carservice.Data;
 using Carservice.Data.Repositories.Abstract;
 using Carservice.WinForm.Models;
-using Carservice.WinForm.Views.Dialogs;
 using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
 using DevExpress.XtraEditors;
@@ -18,20 +17,42 @@ namespace Carservice.WinForm.ViewModels
         private readonly IUnitOfWork uow;
         public virtual ObservableCollection<EmployeeModel> Employees { get; set; }
         public virtual EmployeeModel SelectedEmployee { get; set; }
+        public virtual bool IsSelectMode { get; set; } = false;
+        public virtual string CloseButtonCaption { get; set; } = "Выход";
         public EmployeesViewModel()
         {
             uow = new UnitOfWork();
             Employees = new ObservableCollection<EmployeeModel>();
             SelectedEmployee = new EmployeeModel();
-            loadData();
+            Messenger.Default.Register<bool>(this, "IsSelectEmployeeMod", SetSelectMod);
+            LoadData();
         }
-        private void loadData()
+        private void SetSelectMod(bool isSelected)
+        {
+            IsSelectMode = isSelected;
+            CloseButtonCaption = "Отмена";
+        }
+        public void SendSelectedEmployee()
+        {
+            Messenger.Default.Send<EmployeeModel>(SelectedEmployee, "SetEmployee");
+            CloseView();
+        }
+        private void LoadData()
         {
             foreach (var item in uow.EmployeeRepos.GetAll().ToList())
             {
-                Employees.Add(new EmployeeModel { Id = item.Id, Surname = item.Surname, Name = item.Name, 
-                    Patronymic = item.Patronymic, PositionId = item.PositionId, PositionName = item.Position.PositionName });
+                Employees.Add(new EmployeeModel
+                {
+                    Id = item.Id,
+                    Surname = item.Surname,
+                    Name = item.Name,
+                    Patronymic = item.Patronymic,
+                    PositionId = item.PositionId,
+                    PositionName = item.Position.PositionName,
+                    Position = new PositionModel { Id = item.PositionId, PositionName = item.Position.PositionName }
+                }) ;
             }
+            SelectedEmployee = Employees.FirstOrDefault();
         }
         public void DeleteEmployee()
         {
@@ -56,19 +77,14 @@ namespace Carservice.WinForm.ViewModels
                 }
             }           
         }
+        
         public void EditEmployee()
-        {
-            SendCustomMessage();
-            XtraDialog.Show(new EditEmployeeDialog());
+        {          
            
         }
         public void AddEmployee()
         {
-
         }
-        public void SendCustomMessage()
-        {
-            Messenger.Default.Send(SelectedEmployee);
-        }
+        
     }
 }

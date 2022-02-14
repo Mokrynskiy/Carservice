@@ -1,15 +1,7 @@
 ﻿using Carservice.WinForm.Models;
 using Carservice.WinForm.ViewModels;
-using DevExpress.XtraEditors;
+
 using DevExpress.XtraGrid.Views.Base;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Carservice.WinForm.Views
@@ -25,19 +17,19 @@ namespace Carservice.WinForm.Views
 
         void InitializeBindings()
         {
-            var fluent = mvvmContextOrderEdit.OfType<OrderEditViewModel>();
-
+            var fluent = mvvmContextOrderEdit.OfType<OrderEditViewModel>();            
             fluent.SetBinding(tbOrderNumber, tb => tb.Text, vm => vm.Order.Id);
-            fluent.SetBinding(deOpenDate, tb => tb.Text, vm => vm.Order.OpenDate);
-            fluent.SetBinding(deDueDate, tb => tb.Text, vm => vm.Order.DueDate);
-            fluent.SetBinding(deCloseDate, tb => tb.Text, vm => vm.Order.CloseDate);
+            fluent.SetBinding(deOpenDate, tb => tb.EditValue, vm => vm.Order.OpenDate);
+            fluent.SetBinding(deDueDate, tb => tb.EditValue, vm => vm.Order.DueDate);
+            fluent.SetBinding(deCloseDate, tb => tb.EditValue, vm => vm.Order.CloseDate);
             fluent.SetBinding(tbClientSurname, tb => tb.Text, vm => vm.Order.Car.Client.Surname);
             fluent.SetBinding(tbClientName, tb => tb.Text, vm => vm.Order.Car.Client.Name);
             fluent.SetBinding(tbClientPatronymic, tb => tb.Text, vm => vm.Order.Car.Client.Patronymic);
             fluent.SetBinding(tbCarBrand, tb => tb.Text, vm => vm.Order.Car.Model.CarBrand.BrandName);
             fluent.SetBinding(tbCarModel, tb => tb.Text, vm => vm.Order.Car.Model.ModelName);
             fluent.SetBinding(tbCarRegNumber, tb => tb.Text, vm => vm.Order.Car.RegNumber);
-            fluent.SetBinding(tbCarProductionDate, tb => tb.Text, vm => vm.Order.Car.ProductionDate);
+            fluent.SetBinding(tbCarColor, tb => tb.Text, vm => vm.Order.Car.Color);
+            fluent.SetBinding(tbCarProductionDate, tb => tb.EditValue, vm => vm.Order.Car.ProductionDate);
             fluent.SetBinding(tbEmployeeSurname, tb => tb.Text, vm => vm.Order.Employee.Surname);
             fluent.SetBinding(tbEmployeeName, tb => tb.Text, vm => vm.Order.Employee.Name);
             fluent.SetBinding(tbEmployeePatronymic, tb => tb.Text, vm => vm.Order.Employee.Patronymic);
@@ -48,7 +40,13 @@ namespace Carservice.WinForm.Views
                 .SetBinding(x => x.SelectedService,
                     args => args.Row as ServiceModel,
                     (gView, entity) => gView.FocusedRowHandle = gView.FindRow(entity));
-
+            fluent.WithCommand(vm => vm.SelectClient).Bind(buttonAddClient);
+            fluent.WithCommand(vm => vm.SelectEmployee).Bind(buttonAddEmployee);
+            fluent.WithCommand(vm => vm.OnEditService).Bind(buttonEditService);
+            fluent.WithCommand(vm => vm.SelectService).Bind(buttonAddService);
+            fluent.WithCommand(vm => vm.CloseView).Bind(buttonCancel);
+            fluent.WithCommand(vm => vm.SaveAndClose).Bind(buttonSave);
+            fluent.WithCommand(vm => vm.DeleteService).Bind(buttonDeleteService);
         }
 
     }

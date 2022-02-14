@@ -37,6 +37,7 @@
             this.buttonDelete = new DevExpress.XtraEditors.SimpleButton();
             this.stackPanel2 = new DevExpress.Utils.Layout.StackPanel();
             this.buttonClose = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonOk = new DevExpress.XtraEditors.SimpleButton();
             this.gridEmployee = new DevExpress.XtraGrid.GridControl();
             this.gridViewEmployee = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Surname = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -100,6 +101,7 @@
             // 
             this.stackPanel2.AutoSize = true;
             this.stackPanel2.Controls.Add(this.buttonClose);
+            this.stackPanel2.Controls.Add(this.buttonOk);
             this.stackPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.stackPanel2.LayoutDirection = DevExpress.Utils.Layout.StackPanelLayoutDirection.RightToLeft;
             this.stackPanel2.Location = new System.Drawing.Point(0, 402);
@@ -116,6 +118,16 @@
             this.buttonClose.Size = new System.Drawing.Size(110, 36);
             this.buttonClose.TabIndex = 0;
             this.buttonClose.Text = "Выход";
+            // 
+            // buttonOk
+            // 
+            this.buttonOk.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.buttonOk.Location = new System.Drawing.Point(572, 10);
+            this.buttonOk.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonOk.Name = "buttonOk";
+            this.buttonOk.Size = new System.Drawing.Size(110, 36);
+            this.buttonOk.TabIndex = 0;
+            this.buttonOk.Text = "OK";
             // 
             // gridEmployee
             // 
@@ -194,7 +206,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gridEmployee);
             this.Controls.Add(this.stackPanel2);
-            this.Controls.Add(this.stackPanel1);            
+            this.Controls.Add(this.stackPanel1);
+            
             this.Size = new System.Drawing.Size(822, 458);
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).EndInit();
@@ -223,5 +236,6 @@
         private DevExpress.XtraEditors.SimpleButton buttonAdd;
         private DevExpress.XtraEditors.SimpleButton buttonEdit;
         private DevExpress.XtraEditors.SimpleButton buttonDelete;
+        private DevExpress.XtraEditors.SimpleButton buttonOk;
     }
 }

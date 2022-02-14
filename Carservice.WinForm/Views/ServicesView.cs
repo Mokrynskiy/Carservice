@@ -31,7 +31,10 @@ namespace Carservice.WinForm.Views
                 .SetBinding(x => x.SelectedService,
                     args => args.Row as ServiceModel,
                     (gView, entity) => gView.FocusedRowHandle = gView.FindRow(entity));
-            fluent.BindCommand(buttonCancel, vm => vm.CloseView);
+            fluent.WithCommand(vm => vm.SendSelectedService).Bind(buttonOk);
+            fluent.SetBinding(buttonClose, b => b.Text, vm => vm.CloseButtonCaption);
+            fluent.SetBinding(buttonOk, b => b.Visible, vm => vm.IsSelectMode);
+            fluent.WithCommand(vm => vm.CloseView).Bind(buttonClose);
         }
     }
 }

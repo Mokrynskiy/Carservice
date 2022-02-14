@@ -10,8 +10,9 @@ namespace Carservice.WinForm.Models
         public virtual int MeasureId { get; set; }
         public virtual string MeasureShortName { get; set; }
         public virtual decimal Cost { get; set; }
-        public virtual int NamberOfServices { get; set; }
+        public virtual int NumberOfServices { get; set; }
         public virtual decimal Sum { get; set; }
+        public virtual int OrderServiceId { get; set; }
         public virtual MeasureModel Measure { get; set; }
     }
 }

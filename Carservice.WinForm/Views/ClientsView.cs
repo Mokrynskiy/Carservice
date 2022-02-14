@@ -37,7 +37,12 @@ namespace Carservice.WinForm.Views
             fluent.WithEvent<ColumnView, FocusedRowObjectChangedEventArgs>(gridViewClients, "FocusedRowObjectChanged")
                 .SetBinding(x => x.SelectedCar,
                     args => args.Row as CarModel,
-                    (gView, entity) => gView.FocusedRowHandle = gView.FindRow(entity));            
+                    (gView, entity) => gView.FocusedRowHandle = gView.FindRow(entity));
+            fluent.WithCommand(vm => vm.SendSelectedCar).Bind(buttonOk);
+
+            fluent.SetBinding(buttonClose, b => b.Text, vm => vm.CloseButtonCaption);
+            fluent.SetBinding(buttonOk, b => b.Visible, vm => vm.IsSelectMode);
+            fluent.WithCommand(vm => vm.CloseView).Bind(buttonClose);
         }
     }
 }

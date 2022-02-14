@@ -144,8 +144,8 @@
             // 
             this.barButtonShowServices.Caption = "Услуги";
             this.barButtonShowServices.Id = 7;
-            this.barButtonShowServices.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonServices.ImageOptions.Image")));
-            this.barButtonShowServices.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonServices.ImageOptions.LargeImage")));
+            this.barButtonShowServices.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonShowServices.ImageOptions.Image")));
+            this.barButtonShowServices.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonShowServices.ImageOptions.LargeImage")));
             this.barButtonShowServices.Name = "barButtonShowServices";
             // 
             // barButtonShowEmployeesView
@@ -267,6 +267,7 @@
             // 
             this.OpenDate.Caption = "Дата открытия";
             this.OpenDate.FieldName = "OpenDate";
+            this.OpenDate.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.OpenDate.MinWidth = 25;
             this.OpenDate.Name = "OpenDate";
             this.OpenDate.OptionsColumn.AllowEdit = false;
@@ -280,6 +281,7 @@
             // 
             this.DueDate.Caption = "Срок выполнения";
             this.DueDate.FieldName = "DueDate";
+            this.DueDate.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.DueDate.MinWidth = 25;
             this.DueDate.Name = "DueDate";
             this.DueDate.OptionsColumn.AllowEdit = false;
@@ -295,6 +297,7 @@
             this.Sum.DisplayFormat.FormatString = "C2";
             this.Sum.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.Sum.FieldName = "Sum";
+            this.Sum.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.Sum.MinWidth = 25;
             this.Sum.Name = "Sum";
             this.Sum.OptionsColumn.AllowEdit = false;
@@ -334,6 +337,7 @@
             // 
             this.CloceDate.Caption = "Дата закрытия";
             this.CloceDate.FieldName = "CloceDate";
+            this.CloceDate.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.CloceDate.MinWidth = 25;
             this.CloceDate.Name = "CloceDate";
             this.CloceDate.OptionsColumn.AllowEdit = false;
@@ -358,7 +362,9 @@
             this.Controls.Add(this.ribbonControl1);
             this.MinimumSize = new System.Drawing.Size(800, 400);
             this.Name = "MainView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Автосервис";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewOrders)).EndInit();

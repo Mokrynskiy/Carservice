@@ -52,6 +52,7 @@
             this.buttonAddCar = new DevExpress.XtraEditors.SimpleButton();
             this.buttonEditCar = new DevExpress.XtraEditors.SimpleButton();
             this.buttonDeleteCar = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonOk = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).BeginInit();
             this.stackPanel1.SuspendLayout();
@@ -83,6 +84,7 @@
             // 
             this.stackPanel1.AutoSize = true;
             this.stackPanel1.Controls.Add(this.buttonClose);
+            this.stackPanel1.Controls.Add(this.buttonOk);
             this.stackPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.stackPanel1.LayoutDirection = DevExpress.Utils.Layout.StackPanelLayoutDirection.RightToLeft;
             this.stackPanel1.Location = new System.Drawing.Point(0, 481);
@@ -325,6 +327,16 @@
             this.buttonDeleteCar.TabIndex = 0;
             this.buttonDeleteCar.ToolTip = "Удалить автомобиль";
             // 
+            // buttonOk
+            // 
+            this.buttonOk.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.buttonOk.Location = new System.Drawing.Point(662, 10);
+            this.buttonOk.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonOk.Name = "buttonOk";
+            this.buttonOk.Size = new System.Drawing.Size(110, 36);
+            this.buttonOk.TabIndex = 0;
+            this.buttonOk.Text = "OK";
+            // 
             // ClientsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -386,5 +398,6 @@
         private DevExpress.XtraEditors.SimpleButton buttonAddCar;
         private DevExpress.XtraEditors.SimpleButton buttonEditCar;
         private DevExpress.XtraEditors.SimpleButton buttonDeleteCar;
+        private DevExpress.XtraEditors.SimpleButton buttonOk;
     }
 }

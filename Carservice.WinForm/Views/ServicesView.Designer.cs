@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServicesView));
             this.stackPanel1 = new DevExpress.Utils.Layout.StackPanel();
-            this.buttonCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonClose = new DevExpress.XtraEditors.SimpleButton();
             this.stackPanel2 = new DevExpress.Utils.Layout.StackPanel();
             this.buttonAddService = new DevExpress.XtraEditors.SimpleButton();
             this.buttonEditService = new DevExpress.XtraEditors.SimpleButton();
@@ -42,6 +42,7 @@
             this.MesureShortName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Cost = new DevExpress.XtraGrid.Columns.GridColumn();
             this.mvvmContext1 = new DevExpress.Utils.MVVM.MVVMContext(this.components);
+            this.buttonOk = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).BeginInit();
             this.stackPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel2)).BeginInit();
@@ -54,7 +55,8 @@
             // stackPanel1
             // 
             this.stackPanel1.AutoSize = true;
-            this.stackPanel1.Controls.Add(this.buttonCancel);
+            this.stackPanel1.Controls.Add(this.buttonClose);
+            this.stackPanel1.Controls.Add(this.buttonOk);
             this.stackPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.stackPanel1.LayoutDirection = DevExpress.Utils.Layout.StackPanelLayoutDirection.RightToLeft;
             this.stackPanel1.Location = new System.Drawing.Point(0, 336);
@@ -62,15 +64,15 @@
             this.stackPanel1.Size = new System.Drawing.Size(796, 56);
             this.stackPanel1.TabIndex = 0;
             // 
-            // buttonCancel
+            // buttonClose
             // 
-            this.buttonCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonCancel.ImageOptions.Image")));
-            this.buttonCancel.Location = new System.Drawing.Point(676, 10);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(10);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(110, 36);
-            this.buttonCancel.TabIndex = 0;
-            this.buttonCancel.Text = "Выход";
+            this.buttonClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonCancel.ImageOptions.Image")));
+            this.buttonClose.Location = new System.Drawing.Point(676, 10);
+            this.buttonClose.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(110, 36);
+            this.buttonClose.TabIndex = 0;
+            this.buttonClose.Text = "Выход";
             // 
             // stackPanel2
             // 
@@ -181,13 +183,23 @@
             this.mvvmContext1.ContainerControl = this;
             this.mvvmContext1.ViewModelType = typeof(Carservice.WinForm.ViewModels.ServicesViewModel);
             // 
+            // buttonOk
+            // 
+            this.buttonOk.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.buttonOk.Location = new System.Drawing.Point(546, 10);
+            this.buttonOk.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonOk.Name = "buttonOk";
+            this.buttonOk.Size = new System.Drawing.Size(110, 36);
+            this.buttonOk.TabIndex = 0;
+            this.buttonOk.Text = "Ок";
+            // 
             // ServicesView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gridServices);
             this.Controls.Add(this.stackPanel2);
-            this.Controls.Add(this.stackPanel1);          
+            this.Controls.Add(this.stackPanel1);            
             this.Size = new System.Drawing.Size(796, 392);
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).EndInit();
             this.stackPanel1.ResumeLayout(false);
@@ -205,7 +217,7 @@
         #endregion
 
         private DevExpress.Utils.Layout.StackPanel stackPanel1;
-        private DevExpress.XtraEditors.SimpleButton buttonCancel;
+        private DevExpress.XtraEditors.SimpleButton buttonClose;
         private DevExpress.Utils.Layout.StackPanel stackPanel2;
         private DevExpress.XtraEditors.SimpleButton buttonAddService;
         private DevExpress.XtraEditors.SimpleButton buttonEditService;
@@ -216,5 +228,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Name;
         private DevExpress.XtraGrid.Columns.GridColumn MesureShortName;
         private DevExpress.XtraGrid.Columns.GridColumn Cost;
+        private DevExpress.XtraEditors.SimpleButton buttonOk;
     }
 }

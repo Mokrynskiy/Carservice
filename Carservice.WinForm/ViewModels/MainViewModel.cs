@@ -3,7 +3,6 @@ using Carservice.Data.Repositories.Abstract;
 using CarService.WinForm.Models;
 using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
-using DevExpress.Mvvm.POCO;
 using DevExpress.XtraEditors;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -14,47 +13,48 @@ namespace Carservice.WinForm.ViewModels
     [POCOViewModel]
     public class MainViewModel : ViewModelBase
     {
-
-        private readonly IUnitOfWork uow;
+        private IUnitOfWork uow;
         public virtual ObservableCollection<OrderRowModel> Orders { get; set; }
-        public virtual OrderRowModel SelectedOrder { get; set; }
-
-
-
+        public virtual OrderRowModel SelectedOrder { get; set; } 
         public MainViewModel()
         {
-            uow = new UnitOfWork();
+            
+            Orders = new ObservableCollection<OrderRowModel>();
             SelectedOrder = new OrderRowModel();
+            Messenger.Default.Register<int>(this, "UpdateMainView", UpdateDataGrid);
             LoadOrders();
+        }
+        private void UpdateDataGrid(int id)
+        {            
+            LoadOrders();
+            SelectedOrder = (from o in Orders where o.Id == id select o).FirstOrDefault();
         }
         private void LoadOrders()
         {
-            Orders = new ObservableCollection<OrderRowModel>();
+            uow = new UnitOfWork();
+            Orders.Clear();
             foreach (var item in uow.OrderRepos.GetAll().ToList())
-            {
+            {                
                 var order = new OrderRowModel();
+                var car = uow.CarRepos.Get(item.CarId);
+                var client = uow.ClientRepos.Get(item.Car.ClientId);                
                 order.Id = item.Id;
                 order.OpenDate = item.OpenDate;
                 order.DueDate = item.DueDate;
                 order.CloseDate = item.CloseDate;
-                order.Client = $"{item.Car.Client.Surname} {item.Car.Client.Name} {item.Car.Client.Patronymic}";
-                order.Car = $"{item.Car.Color} {item.Car.CarModel.Brand.BrandName} {item.Car.CarModel.ModelName} {item.Car.RegNumber}";
+                order.Client = $"{client.Surname} {client.Name} {client.Patronymic}";
+                order.Car = $"{car.Color} {car.CarModel.Brand.BrandName} {car.CarModel.ModelName} {car.RegNumber}";
                 decimal sum = 0;
-                foreach (var serv in item.Services.ToList())
+                foreach (var serv in uow.OrderServiceRepos.FindAll(x => x.OrderId == item.Id).ToList())
                 {
-                    sum += serv.Service.ServiceCost * serv.NumberOfServices;
+                    var service = uow.ServiceRepos.Get(serv.ServiceId);
+                    sum += service.ServiceCost * serv.NumberOfServices;
                 }
                 order.Sum = sum;
                 Orders.Add(order);
             }
             SelectedOrder = Orders.FirstOrDefault();
-        }
-        // Редактирование заказа
-        public void Edit()
-        {
-            MessageBox.Show(SelectedOrder.Client);
-        }
-        // Удаление заказа
+        }                     
         public void DeleteOrder()
         {
             if (SelectedOrder != null)
@@ -69,13 +69,21 @@ namespace Carservice.WinForm.ViewModels
                     }
                     catch (System.Exception e)
                     {
-
                         XtraMessageBox.Show(e.Message);
                     }
                 }
             }
         }
-                    
+        public void EditOrder()
+        {            
+            ShowEditOrderView();
+            Messenger.Default.Send(SelectedOrder.Id);
+        }
+        public void AddOrder()
+        {
+            ShowEditOrderView();
+            Messenger.Default.Send(0);                       
+        }
 
 
     }

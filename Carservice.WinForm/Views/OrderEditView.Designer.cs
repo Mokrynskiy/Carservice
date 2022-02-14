@@ -81,14 +81,14 @@
             this.gridServices = new DevExpress.XtraGrid.GridControl();
             this.gridViewServices = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.stackPanel6 = new DevExpress.Utils.Layout.StackPanel();
-            this.buttonAddService = new DevExpress.XtraEditors.SimpleButton();
-            this.buttonEditService = new DevExpress.XtraEditors.SimpleButton();
-            this.buttonDeleteService = new DevExpress.XtraEditors.SimpleButton();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.stackPanel6 = new DevExpress.Utils.Layout.StackPanel();
+            this.buttonAddService = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonEditService = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonDeleteService = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContextOrderEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -155,6 +155,7 @@
             // 
             // stackPanel3
             // 
+            this.stackPanel3.AutoScroll = true;
             this.stackPanel3.AutoSize = true;
             this.stackPanel3.Controls.Add(this.labelControl13);
             this.stackPanel3.Controls.Add(this.tbOrderNumber);
@@ -181,6 +182,7 @@
             // 
             // tbOrderNumber
             // 
+            this.tbOrderNumber.Enabled = false;
             this.tbOrderNumber.Location = new System.Drawing.Point(31, 10);
             this.tbOrderNumber.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tbOrderNumber.Name = "tbOrderNumber";
@@ -205,6 +207,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deOpenDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deOpenDate.Properties.MaskSettings.Set("mask", "d");
             this.deOpenDate.Size = new System.Drawing.Size(125, 22);
             this.deOpenDate.TabIndex = 3;
             // 
@@ -226,6 +229,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deDueDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deDueDate.Properties.MaskSettings.Set("mask", "d");
             this.deDueDate.Size = new System.Drawing.Size(125, 22);
             this.deDueDate.TabIndex = 3;
             // 
@@ -247,6 +251,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deCloseDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deCloseDate.Properties.MaskSettings.Set("mask", "d");
             this.deCloseDate.Size = new System.Drawing.Size(125, 22);
             this.deCloseDate.TabIndex = 3;
             // 
@@ -293,6 +298,7 @@
             // 
             // tbCarBrand
             // 
+            this.tbCarBrand.Enabled = false;
             this.tbCarBrand.Location = new System.Drawing.Point(84, 10);
             this.tbCarBrand.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tbCarBrand.Name = "tbCarBrand";
@@ -310,6 +316,7 @@
             // 
             // tbCarModel
             // 
+            this.tbCarModel.Enabled = false;
             this.tbCarModel.Location = new System.Drawing.Point(304, 10);
             this.tbCarModel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tbCarModel.Name = "tbCarModel";
@@ -327,6 +334,7 @@
             // 
             // tbCarRegNumber
             // 
+            this.tbCarRegNumber.Enabled = false;
             this.tbCarRegNumber.Location = new System.Drawing.Point(543, 10);
             this.tbCarRegNumber.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tbCarRegNumber.Name = "tbCarRegNumber";
@@ -344,6 +352,7 @@
             // 
             // tbCarColor
             // 
+            this.tbCarColor.Enabled = false;
             this.tbCarColor.Location = new System.Drawing.Point(747, 10);
             this.tbCarColor.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tbCarColor.Name = "tbCarColor";
@@ -361,14 +370,23 @@
             // 
             // tbCarProductionDate
             // 
+            this.tbCarProductionDate.Enabled = false;
             this.tbCarProductionDate.Location = new System.Drawing.Point(995, 10);
             this.tbCarProductionDate.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tbCarProductionDate.Name = "tbCarProductionDate";
+            this.tbCarProductionDate.Properties.DisplayFormat.FormatString = "yyyy";
+            this.tbCarProductionDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.tbCarProductionDate.Properties.EditFormat.FormatString = "yyyy";
+            this.tbCarProductionDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.tbCarProductionDate.Properties.MaskSettings.Set("mask", "yyyy");
+            this.tbCarProductionDate.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.DateTimeMaskManager));
+            this.tbCarProductionDate.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.tbCarProductionDate.Size = new System.Drawing.Size(125, 22);
             this.tbCarProductionDate.TabIndex = 1;
             // 
             // stackPanel1
             // 
+            this.stackPanel1.AutoScroll = true;
             this.stackPanel1.AutoSize = true;
             this.stackPanel1.Controls.Add(this.labelControl2);
             this.stackPanel1.Controls.Add(this.tbClientSurname);
@@ -393,6 +411,7 @@
             // 
             // tbClientSurname
             // 
+            this.tbClientSurname.Enabled = false;
             this.tbClientSurname.Location = new System.Drawing.Point(69, 10);
             this.tbClientSurname.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tbClientSurname.Name = "tbClientSurname";
@@ -410,6 +429,7 @@
             // 
             // tbClientName
             // 
+            this.tbClientName.Enabled = false;
             this.tbClientName.Location = new System.Drawing.Point(291, 10);
             this.tbClientName.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tbClientName.Name = "tbClientName";
@@ -427,6 +447,7 @@
             // 
             // tbClientPatronymic
             // 
+            this.tbClientPatronymic.Enabled = false;
             this.tbClientPatronymic.Location = new System.Drawing.Point(545, 10);
             this.tbClientPatronymic.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tbClientPatronymic.Name = "tbClientPatronymic";
@@ -492,6 +513,7 @@
             // 
             // tbEmployeeSurname
             // 
+            this.tbEmployeeSurname.Enabled = false;
             this.tbEmployeeSurname.Location = new System.Drawing.Point(69, 10);
             this.tbEmployeeSurname.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tbEmployeeSurname.Name = "tbEmployeeSurname";
@@ -509,6 +531,7 @@
             // 
             // tbEmployeeName
             // 
+            this.tbEmployeeName.Enabled = false;
             this.tbEmployeeName.Location = new System.Drawing.Point(291, 10);
             this.tbEmployeeName.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tbEmployeeName.Name = "tbEmployeeName";
@@ -526,6 +549,7 @@
             // 
             // tbEmployeePatronymic
             // 
+            this.tbEmployeePatronymic.Enabled = false;
             this.tbEmployeePatronymic.Location = new System.Drawing.Point(545, 10);
             this.tbEmployeePatronymic.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tbEmployeePatronymic.Name = "tbEmployeePatronymic";
@@ -543,6 +567,7 @@
             // 
             // tbEmployeePosition
             // 
+            this.tbEmployeePosition.Enabled = false;
             this.tbEmployeePosition.Location = new System.Drawing.Point(810, 10);
             this.tbEmployeePosition.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tbEmployeePosition.Name = "tbEmployeePosition";
@@ -633,16 +658,75 @@
             this.gridViewServices.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gridViewServices.GridControl = this.gridServices;
             this.gridViewServices.Name = "gridViewServices";
+            this.gridViewServices.OptionsView.ShowIndicator = false;
             // 
             // gridColumn1
             // 
-            this.gridColumn1.Caption = "gridColumn1";
+            this.gridColumn1.Caption = "Наименование услуги";
             this.gridColumn1.FieldName = "Name";
             this.gridColumn1.MinWidth = 25;
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.OptionsColumn.AllowFocus = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             this.gridColumn1.Width = 94;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Цена";
+            this.gridColumn2.DisplayFormat.FormatString = "C2";
+            this.gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.gridColumn2.FieldName = "Cost";
+            this.gridColumn2.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
+            this.gridColumn2.MinWidth = 25;
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.OptionsColumn.AllowFocus = false;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 94;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Кол-во";
+            this.gridColumn3.FieldName = "NumberOfServices";
+            this.gridColumn3.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
+            this.gridColumn3.MinWidth = 25;
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
+            this.gridColumn3.OptionsColumn.AllowFocus = false;
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.Width = 94;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Ед. изм.";
+            this.gridColumn4.FieldName = "MeasureShortName";
+            this.gridColumn4.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
+            this.gridColumn4.MinWidth = 25;
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
+            this.gridColumn4.OptionsColumn.AllowFocus = false;
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.Width = 94;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Сумма";
+            this.gridColumn5.DisplayFormat.FormatString = "C2";
+            this.gridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.gridColumn5.FieldName = "Sum";
+            this.gridColumn5.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
+            this.gridColumn5.MinWidth = 25;
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
+            this.gridColumn5.OptionsColumn.AllowFocus = false;
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.Width = 94;
             // 
             // stackPanel6
             // 
@@ -685,46 +769,6 @@
             this.buttonDeleteService.Size = new System.Drawing.Size(130, 36);
             this.buttonDeleteService.TabIndex = 0;
             this.buttonDeleteService.Text = "Удалить";
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "gridColumn2";
-            this.gridColumn2.FieldName = "Cost";
-            this.gridColumn2.MinWidth = 25;
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 94;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "gridColumn3";
-            this.gridColumn3.FieldName = "NumberOfServices";
-            this.gridColumn3.MinWidth = 25;
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 94;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "gridColumn4";
-            this.gridColumn4.FieldName = "MeasureShortName";
-            this.gridColumn4.MinWidth = 25;
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 94;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "gridColumn5";
-            this.gridColumn5.FieldName = "Sum";
-            this.gridColumn5.MinWidth = 25;
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
-            this.gridColumn5.Width = 94;
             // 
             // OrderEditView
             // 
@@ -812,7 +856,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.TextEdit tbCarColor;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.TextEdit tbCarProductionDate;
         private DevExpress.Utils.Layout.StackPanel stackPanel1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit tbClientSurname;
@@ -846,7 +889,6 @@
         private DevExpress.XtraEditors.SimpleButton buttonAddEmployee;
         private DevExpress.Utils.Layout.StackPanel stackPanel3;
         private DevExpress.XtraEditors.LabelControl labelControl13;
-        private DevExpress.XtraEditors.TextEdit tbOrderNumber;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.DateEdit deOpenDate;
         private DevExpress.XtraEditors.LabelControl labelControl10;
@@ -858,5 +900,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraEditors.TextEdit tbOrderNumber;
+        private DevExpress.XtraEditors.TextEdit tbCarProductionDate;
     }
 }

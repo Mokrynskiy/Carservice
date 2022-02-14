@@ -1,6 +1,7 @@
 ﻿using Carservice.Data;
 using Carservice.Data.Repositories.Abstract;
 using Carservice.WinForm.Models;
+using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
 using System;
 using System.Collections.Generic;
@@ -18,14 +19,27 @@ namespace Carservice.WinForm.ViewModels
         private readonly IUnitOfWork uow;
         public virtual ObservableCollection<ServiceModel> Services { get; set; }
         public virtual ServiceModel SelectedService { get; set; }
+        public virtual bool IsSelectMode { get; set; } = false;
+        public virtual string CloseButtonCaption { get; set; } = "Выход";       
+
         public ServicesViewModel()
         {
             uow = new UnitOfWork();
             Services = new ObservableCollection<ServiceModel>();
             SelectedService = new ServiceModel();
+            Messenger.Default.Register<bool>(this, "IsSelectServiceMod", SetSelectMod);
             LoadData();
         }
-
+        private void SetSelectMod(bool isSelectMod)
+        {
+            IsSelectMode = isSelectMod;
+            CloseButtonCaption = "Отмена";
+        }
+        public void SendSelectedService()
+        {
+            Messenger.Default.Send<ServiceModel>(SelectedService, "AddService");
+            CloseView();
+        }
         private void LoadData()
         {
             try
