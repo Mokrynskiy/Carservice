@@ -214,7 +214,7 @@ namespace Carservice.WinForm.ViewModels
         }
         public void SaveAndClose()
         {
-            if (Order.CarId == 0 || Order.EmployeeId == 0 )
+            if (Order.Car.Id == 0 || Order.Employee.Id == 0 )
             {
                 XtraMessageBox.Show("Необходимо указать клиента и ответственного исполнителя", "Ошибка!");
             }
