@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonOrderPrint = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonOrderDetail = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonOrderAdd = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonOrderEdit = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonOrderDelete = new DevExpress.XtraBars.BarButtonItem();
@@ -43,7 +42,6 @@
             this.Единицы = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -71,7 +69,6 @@
             this.ribbonControl1.ExpandCollapseItem,
             this.ribbonControl1.SearchEditItem,
             this.barButtonOrderPrint,
-            this.barButtonOrderDetail,
             this.barButtonOrderAdd,
             this.barButtonOrderEdit,
             this.barButtonOrderDelete,
@@ -81,7 +78,7 @@
             this.barButtonIShowCarCatalog,
             this.Единицы});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 14;
+            this.ribbonControl1.MaxItemId = 15;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -96,14 +93,6 @@
             this.barButtonOrderPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonOrderPrint.ImageOptions.Image")));
             this.barButtonOrderPrint.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonOrderPrint.ImageOptions.LargeImage")));
             this.barButtonOrderPrint.Name = "barButtonOrderPrint";
-            // 
-            // barButtonOrderDetail
-            // 
-            this.barButtonOrderDetail.Caption = "Детали заказа";
-            this.barButtonOrderDetail.Id = 2;
-            this.barButtonOrderDetail.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonOrderDetail.ImageOptions.Image")));
-            this.barButtonOrderDetail.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonOrderDetail.ImageOptions.LargeImage")));
-            this.barButtonOrderDetail.Name = "barButtonOrderDetail";
             // 
             // barButtonOrderAdd
             // 
@@ -176,7 +165,6 @@
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
-            this.ribbonPageGroup2,
             this.ribbonPageGroup3});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Журнал заказов";
@@ -185,11 +173,6 @@
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonOrderPrint);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            // 
-            // ribbonPageGroup2
-            // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonOrderDetail);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             // 
             // ribbonPageGroup3
             // 
@@ -213,7 +196,6 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonIShowCarCatalog);
             this.ribbonPageGroup4.ItemLinks.Add(this.Единицы);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.Text = "ribbonPageGroup4";
             // 
             // ribbonStatusBar1
             // 
@@ -380,7 +362,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem barButtonOrderPrint;
-        private DevExpress.XtraBars.BarButtonItem barButtonOrderDetail;
         private DevExpress.XtraBars.BarButtonItem barButtonOrderAdd;
         private DevExpress.XtraBars.BarButtonItem barButtonOrderEdit;
         private DevExpress.XtraBars.BarButtonItem barButtonOrderDelete;
@@ -389,7 +370,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonShowEmployeesView;
         private DevExpress.XtraBars.BarButtonItem barButtonIShowCarCatalog;
         private DevExpress.XtraBars.BarButtonItem Единицы;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;

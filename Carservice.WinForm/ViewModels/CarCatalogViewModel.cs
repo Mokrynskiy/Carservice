@@ -68,10 +68,17 @@ namespace Carservice.WinForm.ViewModels
                 {
                     if (XtraMessageBox.Show($"Вы действительно хотите удалить марку автомобиля {SelectedBrand.BrandName}?", "Внимание!!!", MessageBoxButtons.YesNo) != DialogResult.No)
                     {
-                        var brandEntity = uow.CarBrandRepos.Get(SelectedBrand.Id);
-                        CarBrands.Remove(SelectedBrand);
-                        uow.CarBrandRepos.Delete(brandEntity);
-                        uow.Save();
+                        if (uow.CarModelRepos.FindAll(x =>x.BrandId == SelectedBrand.Id).Any())
+                        {
+                            XtraMessageBox.Show($"Невозможно удалить марку автомобиля {SelectedBrand.BrandName} так как в таблице моделей автомобилей есть связанные данные", "Ошибка!");
+                        }
+                        else
+                        {
+                            var brandEntity = uow.CarBrandRepos.Get(SelectedBrand.Id);
+                            CarBrands.Remove(SelectedBrand);
+                            uow.CarBrandRepos.Delete(brandEntity);
+                            uow.Save();
+                        }                        
                     }
                 }
                 catch (Exception e)
@@ -89,10 +96,17 @@ namespace Carservice.WinForm.ViewModels
                 {
                     if (XtraMessageBox.Show($"Вы действительно хотите удалить модель автомобиля {SelectedModel.ModelName}?", "Внимание!!!", MessageBoxButtons.YesNo) != DialogResult.No)
                     {
-                        var modelEntity = uow.CarModelRepos.Get(SelectedModel.Id);
-                        CarModels.Remove(SelectedModel);
-                        uow.CarModelRepos.Delete(modelEntity);
-                        uow.Save();
+                        if (uow.OrderRepos.FindAll(x => x.Car.CarModelId == SelectedModel.Id).Any())
+                        {
+                            XtraMessageBox.Show($"Невозможно удалить модель автомобиля {SelectedModel.ModelName} так как в таблице заказов и таблице клиентов есть связанные данные", "Ошибка!");
+                        }
+                        else
+                        {
+                            var modelEntity = uow.CarModelRepos.Get(SelectedModel.Id);
+                            CarModels.Remove(SelectedModel);
+                            uow.CarModelRepos.Delete(modelEntity);
+                            uow.Save();
+                        }                            
                     }
                 }
                 catch (Exception e)

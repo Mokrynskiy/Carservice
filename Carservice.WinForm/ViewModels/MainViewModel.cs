@@ -1,5 +1,6 @@
 ﻿using Carservice.Data;
 using Carservice.Data.Repositories.Abstract;
+using Carservice.WinForm.Views;
 using CarService.WinForm.Models;
 using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
@@ -78,6 +79,11 @@ namespace Carservice.WinForm.ViewModels
         {            
             ShowEditOrderView();
             Messenger.Default.Send(SelectedOrder.Id);
+        }
+        public void PrintOrder()
+        {
+            ReportView report = new ReportView(SelectedOrder.Id);
+            report.Show();            
         }
         public void AddOrder()
         {

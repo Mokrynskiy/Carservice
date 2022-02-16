@@ -34,8 +34,12 @@ namespace Carservice.WinForm.Views
             fluent.WithEvent<RowClickEventArgs>(gridViewOrders, "RowClick")
                 .EventToCommand(x => x.EditOrder, args => (args.Clicks == 2) && (args.Button == MouseButtons.Left));
             fluent.WithCommand(vm => vm.DeleteOrder)
-                .Bind(barButtonOrderDelete);            
+                .Bind(barButtonOrderDelete);
+            fluent.WithCommand(vm => vm.PrintOrder)
+                .Bind(barButtonOrderPrint);
 
         }
+
+        
     }
 }
